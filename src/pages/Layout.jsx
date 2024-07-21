@@ -11,13 +11,13 @@ import Footer from '../components/pages/layout/Footer';
 export default function Layout() {
 
   return (
-    <div>
+    <>
       <Header/>
       <main>
         <Outlet/>
         <ToastContainer position="bottom-left"/>
       </main>
       <Footer/>
-    </div>
+    </>
   );
 }

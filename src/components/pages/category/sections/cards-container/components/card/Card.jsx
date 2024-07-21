@@ -101,7 +101,7 @@ export default function Card() {
             responsive={responsive}
             keyBoardControl
             removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
-            containerClass="w-screen sm:w-[96vw]"
+            containerClass="w-[93vw]"
             itemClass="fix-drag select-none px-[5vw] "
           >
             {images.map(image =>
@@ -141,7 +141,7 @@ export default function Card() {
             )}
           </ul>
           
-          <p className="description px-[5vw] md:px-2">
+          <p className="description px-[5vw] text-sm md:px-2">
             DSOM offers a comprehensive program for Graphic Designing that thoroughly covers the fundamental concepts. This program is designed to equip students with the essential skills and knowledge required in the field of graphic design.
           </p>
 

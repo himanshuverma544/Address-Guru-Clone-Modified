@@ -1,9 +1,9 @@
-import { NavLink, Link } from 'react-router-dom'; 
+import { NavLink, Link, useLocation } from 'react-router-dom'; 
 
 import Search from '../../utility/Search';
 import Select from '../../utility/Select';
 
-import { CATEGORY } from '../../../../routes';
+import { HOME, CATEGORY } from '../../../../routes';
 
 
 const navItems = [
@@ -34,18 +34,21 @@ const selectOptions = [
 
 export default function Header() {
 
+  const location = useLocation();
+
+
   return (
     <header className="flex flex-wrap justify-around items-center gap-5 px-5 py-5 bg-secondaryLight">
       
       <div className="parent-wrapper w-full flex justify-between sm:w-auto sm:gap-5 md:w-auto md:grow">
         <div className="menu-app-brand-wrapper flex items-center gap-5 lg:justify-around xl:gap-10">
-          <div className="menu-icon flex flex-col gap-[0.4rem]">
+          <button className="menu-icon flex flex-col gap-[0.4rem]">
             <div className="w-5 h-px bg-black"/>
             <div className="w-5 h-px bg-black"/>
             <div className="w-5 h-px bg-black"/>
-          </div> 
+          </button> 
           <div className="app-brand">
-            <Link className="font-bold sm:text-xl md:text-2xl lg:text-xl xl:text-2xl" href="#">
+            <Link className="font-bold sm:text-xl md:text-2xl lg:text-xl xl:text-2xl" to={HOME.pathname}>
               Address Guru
             </Link>
           </div>
@@ -59,9 +62,13 @@ export default function Header() {
         <Search className="text-sm lg:text-xs xl:text-sm"/>
       </form>
 
-      <nav className="nav-links w-full flex justify-around items-center gap-5 px-5 py-2 fixed bottom-0 left-0 z-10 text-center text-xs shadow bg-secondaryLight sm:text-sm lg:w-auto lg:static lg:shadow-none lg:text-xs xl:text-sm">
+      <nav className="nav-links w-full flex justify-around items-center gap-5 border px-5 py-4 fixed bottom-0 left-0 z-10 text-center text-xs shadow bg-secondaryLight text-black sm:text-sm lg:w-auto lg:static lg:shadow-none lg:text-xs xl:text-sm">
         {navItems.map(navItem => 
-          <NavLink key={navItem.id} to={navItem.url}>
+          <NavLink
+            key={navItem.id}
+            className={location.pathname === navItem.url ? "opacity-100" : "opacity-70"}
+            to={navItem.url}
+          >
             {navItem.text}
           </NavLink>
         )}
