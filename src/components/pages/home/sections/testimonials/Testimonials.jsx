@@ -183,7 +183,7 @@ export default function Testimonials() {
           removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
           containerClass="w-[89.3vw] pb-10"
           sliderClass="flex items-center lg:h-[35vw] lg:max-h-[350px] xl:max-h-[300px]"
-          itemClass="fix-drag select-none sm:px-5"
+          itemClass="fix-drag select-none px-4"
           beforeChange={
             (..._) => screenWidth > md && highlightMiddleTestimonial(setHighlightTestimonial)
           }

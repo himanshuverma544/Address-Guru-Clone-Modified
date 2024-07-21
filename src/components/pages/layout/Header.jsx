@@ -66,7 +66,7 @@ export default function Header() {
         {navItems.map(navItem => 
           <NavLink
             key={navItem.id}
-            className={location.pathname === navItem.url ? "opacity-100" : "opacity-70"}
+            className={location.pathname === navItem.url ? "opacity-100" : "opacity-50"}
             to={navItem.url}
           >
             {navItem.text}

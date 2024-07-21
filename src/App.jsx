@@ -1,7 +1,5 @@
 import './App.css';
-import "react-toastify/dist/ReactToastify.css";
 import 'react-multi-carousel/lib/styles.css';
-
 
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { HOME, CATEGORY, PAGE404 } from '../routes.js';
