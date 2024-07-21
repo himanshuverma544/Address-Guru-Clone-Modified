@@ -7,7 +7,7 @@ import eslint from 'vite-plugin-eslint';
 
 export default defineConfig({
 
-  base: "/Template/",
+  base: "/DSOM-Assignment/",
 
   plugins: [
     react(),
