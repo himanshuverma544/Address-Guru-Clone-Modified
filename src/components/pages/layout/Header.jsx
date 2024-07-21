@@ -62,7 +62,7 @@ export default function Header() {
         <Search className="text-sm lg:text-xs xl:text-sm"/>
       </form>
 
-      <nav className="nav-links w-full flex justify-around items-center gap-5 border px-5 py-4 fixed bottom-0 left-0 z-10 text-center text-xs shadow bg-secondaryLight text-black sm:text-sm lg:w-auto lg:static lg:shadow-none lg:text-xs xl:text-sm">
+      <nav className="nav-links w-full flex justify-around items-center gap-5 border px-5 py-4 fixed bottom-0 left-0 z-10 text-center text-xs shadow bg-secondaryLight text-black sm:text-sm lg:w-auto lg:border-none lg:py-0 lg:static lg:shadow-none lg:text-xs xl:text-sm">
         {navItems.map(navItem => 
           <NavLink
             key={navItem.id}
