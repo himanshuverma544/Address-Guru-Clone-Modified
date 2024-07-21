@@ -1,7 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
+
+import { IoMdArrowDropdown } from "react-icons/io";
 
 
-const Select = ({ options }) => {
+const Select = ({ className, options }) => {
 
   const [selected, setSelected] = useState("Dehradun");
   const [showOptions, setShowOptions] = useState(false);
@@ -26,17 +28,17 @@ const Select = ({ options }) => {
   }, []);
 
   return (
-    <div className="relative inline-block w-48" ref={selectRef}>
-      <div className="wrapper flex justify-between items-center border">
-        <div 
-          className="select-selected w-full bg-white text-black py-2 px-4 cursor-pointer" 
-          onClick={() => setShowOptions(!showOptions)}
-        >
+    <div className={`${className} relative inline-block`} ref={selectRef}>
+      <div
+        className="wrapper flex justify-between items-center border rounded cursor-pointer bg-white lg:w-[12vw] xl:w-[15vw]"
+        onClick={() => setShowOptions(!showOptions)}
+      >
+        <div className="select-selected w-full py-2 px-4 text-black">
           {selected}
           <span className={`absolute top-1/2 right-4 transform -translate-y-1/2 border-solid border-transparent border-t-6 border-l-6 border-r-6 ${showOptions ? 'rotate-180' : ''}`} />
         </div>
         <div className="down-arrow text-xs me-5 font-semibold">
-          v
+          <IoMdArrowDropdown/>
         </div>
       </div>
       {showOptions && (

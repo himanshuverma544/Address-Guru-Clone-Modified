@@ -40,20 +40,19 @@ const ImageShowCase = ({ className, images }) => {
       </div>
 
       <div
-        className="row-2 h-fit grid grid-cols-3 row-span-1 col-span-full gap-2"
+        className="row-2 h-fit grid row-span-1 col-span-full gap-2"
         onClick={handleSelectedImage}
       >
         <Carousel
           responsive={responsive}
           keyBoardControl
-          removeArrowOnDeviceType={["mobile"]}
-          containerClass="w-[31.2rem]"
-          itemClass="select-none fix-drag px-[0.3vw] cursor-pointer hover:brightness-50 "
+          removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
+          itemClass="fix-drag select-none px-[0.3vw] cursor-pointer hover:brightness-50 "
         >
           {images.map(image =>
             <div key={image.id} className="img-cont h-[6rem] lg:h-[7.5rem]">
               <img 
-                className="w-full h-full object-cover rounded-md"
+                className="size-full object-cover rounded-md"
                 src={image.url}
                 alt={`Image ${image.id}`}
               />

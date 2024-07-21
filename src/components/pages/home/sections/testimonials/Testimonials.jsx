@@ -166,10 +166,10 @@ export default function Testimonials() {
     
     
   return (
-    <section className="testimonials flex flex-col items-center gap-10 py-10">
-      <h1 className="text-5xl font-bold">
+    <section className="testimonials flex flex-col items-center gap-5 px-5 py-10 bg-tertiaryLight">
+      <h2 className="text-xl font-bold text-primaryBlue sm:text-2xl lg:text-3xl">
         Testimonials
-      </h1>
+      </h2>
 
       <div className="carousel-cont-&-arrows-wrapper">
         <Carousel
@@ -181,13 +181,13 @@ export default function Testimonials() {
           autoPlay
           keyBoardControl
           removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
-          containerClass="w-[97vw] pb-10"
+          containerClass="w-[89.3vw] pb-10"
           sliderClass="flex items-center lg:h-[35vw] lg:max-h-[350px] xl:max-h-[300px]"
-          itemClass="select-none fix-drag sm:px-5"
+          itemClass="fix-drag select-none sm:px-5"
           beforeChange={
-            (...rest) => screenWidth > md && highlightMiddleTestimonial(setHighlightTestimonial)
+            (..._) => screenWidth > md && highlightMiddleTestimonial(setHighlightTestimonial)
           }
-          afterChange={(...rest) => {
+          afterChange={(..._) => {
             screenWidth >= md && disableArrowBtn(setIsDisabled)
             
           }}           
@@ -197,19 +197,22 @@ export default function Testimonials() {
               key={item.id} 
               className={`
                 flex flex-col justify-center items-center gap-5
-                p-5 border rounded-lg 
+                p-5 border-8 rounded-lg
+                bg-white border-secondaryLight
                 transition-all duration-500 ease-in
                 ${highlightTestimonial == (item.id - 1) ? "lg:py-10 xl:py-12" : ""}
               `}
               data-id={item.id - 1}
             >
-              <p className='text-center'>{item.text}</p>
+              <p className='text-center text-xs md:text-sm'>
+                {item.text}
+              </p>
               <div className="avatar-details flex gap-5">
                 <Avatar
                   src={item.avatar.profilePic}
                   alt={`${item.avatar.name} Avatar`}
                 />
-                <div className="info">
+                <div className="info text-xs md:text-sm">
                   <div className='name'>{item.avatar.name}</div>
                   <div className='location'>{item.avatar.location}</div>
                 </div>
@@ -221,24 +224,24 @@ export default function Testimonials() {
         <div className="carousel-arrows flex justify-between lg:hidden">
           <button
             ref={leftArrowBtnRef}
-            className="left-arrow-btn ms-5 sm:ms-7 md:ms-9"
+            className="left-arrow-btn border me-5 ms-5 rounded-[50%] sm:ms-7 md:ms-9"
             disabled={isDisabled.leftArrowBtn}
             onClick={() => carouselRef.current.previous()}
           >
             {!isDisabled.leftArrowBtn ?
-              <ArrowActive className="left-arrow-active rotate-180"/> :
-              <ArrowDisabled className="left-arrow-disabled"/>
+              <ArrowActive className="left-arrow-active rotate-180 fill-primaryBlue"/> :
+              <ArrowDisabled className="left-arrow-disabled fill-primaryBlue"/>
             }
           </button>
           <button
             ref={rightArrowBtnRef}
-            className="right-arrow-btn me-5 sm:me-7 md:me-9"
+            className="right-arrow-btn border me-5 rounded-[50%] sm:me-7 md:me-9"
             disabled={isDisabled.rightArrowBtn}
             onClick={() => carouselRef.current.next()}
           >
             {!isDisabled.rightArrowBtn ?
-              <ArrowActive className="right-arrow-active"/> :
-              <ArrowDisabled className="right-arrow-disabled rotate-180"/>
+              <ArrowActive className="right-arrow-active fill-primaryBlue"/> :
+              <ArrowDisabled className="right-arrow-disabled rotate-180 fill-primaryBlue"/>
             }
           </button>
         </div>

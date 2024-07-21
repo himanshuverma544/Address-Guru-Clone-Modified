@@ -308,7 +308,7 @@ const services = [
 export default function ServicesGrid() {
 
   return (
-    <div className="services-grid w-[90%] flex flex-wrap gap-14 border-8 p-5 rounded-3xl border-secondaryLight bg-white">
+    <div className="services-grid w-[90%] flex flex-wrap justify-center gap-14 border-8 p-5 rounded-3xl border-secondaryLight bg-white">
       {services.map((service, index) => 
         <div key={index} className="service flex flex-col items-center justify-center gap-1">
         <div className="icon-cont text-3xl">

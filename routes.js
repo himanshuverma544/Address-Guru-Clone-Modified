@@ -5,7 +5,7 @@ export const HOME = {
 
 export const CATEGORY = {
   title: "Category",
-  pathname: "category"
+  pathname: "/category"
 }; 
 
 export const PAGE404 = {

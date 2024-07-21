@@ -3,15 +3,15 @@ import React from 'react'
 export default function List({ list }) {
 
   return (
-    <div className="list w-[32%] flex gap-3 p-2 rounded-lg shadow">
-      <div className="img-cont w-[80px] h-[inherit]">
-        <img className="w-full h-full object-cover rounded-lg" src={list.image} alt={list.name}/>
+    <div className="list flex gap-3 p-3 rounded-lg shadow">
+      <div className="img-cont w-[6.25rem] h-[inherit]">
+        <img className="size-full object-cover rounded-lg" src={list.image} alt={list.name}/>
       </div>
-      <div className="details">
-        <div className="name">
+      <div className="details flex flex-col gap-1">
+        <div className="name text-sm">
           {list.name}
         </div>
-        <div className="business text-sm font-semibold text-primaryBlue">
+        <div className="business text-xs font-semibold text-primaryBlue">
           {list.business}
         </div>
         <div className="time text-xs">

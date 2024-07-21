@@ -36,7 +36,7 @@ const features = [
   {
     id: 4,
     icon: <FeatureIcon/>,
-    text: "Lorem Ipsum"
+    text: "Blender"
   }
 ];
 
@@ -85,7 +85,7 @@ export default function Card() {
   const { md } = breakpoints;
 
   return (
-    <div className="card flex flex-col gap-5 px-3 py-5 md:flex-row md:mx-3">
+    <div className="card flex flex-col gap-5 border px-3 py-5 md:flex-row md:mx-3">
 
       {screenWidth >= md && 
         <ImageShowcase className="image-showcase-cont w-[40%] px-2" images={images}/>
@@ -101,12 +101,13 @@ export default function Card() {
             responsive={responsive}
             keyBoardControl
             removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
-            itemClass="px-[5vw] select-none fix-drag"
+            containerClass="w-screen sm:w-[96vw]"
+            itemClass="fix-drag select-none px-[5vw] "
           >
             {images.map(image =>
               <div key={image.id} className="image-cont h-[60vw] sm:h-[28vw]">
                 <img
-                  className="w-full h-full object-cover rounded"
+                  className="size-full object-cover rounded"
                   src={image.url}
                   alt={`Image ${image.id}`}
                 />
@@ -117,14 +118,14 @@ export default function Card() {
 
         <div className="content-cont flex flex-col items-center gap-5 md:items-stretch">
           
-          <div className="wrapper flex items-center gap-24">
+          <div className="wrapper flex flex-col items-center justify-center gap-5 md:flex-row md:justify-between lg:me-[5vw]">
             <div className="location-cont flex gap-1 px-2">
               <CiLocationOn className="location-icon text-2xl text-primaryBlue md:text-xl"/>
               <span className="location-text text-center text-sm text-black opacity-90 md:text-left lg:text-base">
                 Lorem ipsum dolor sit amet consectetur. Aliquet facilisis.
               </span>
             </div> 
-            <Rating rated={faker.number.int({ min: 1, max: 5 })}/>
+            <Rating className="order-first md:order-none" rated={faker.number.int({ min: 1, max: 5 })}/>
           </div>
         
           <ul className="features-cont flex gap-[10vw] px-2 text-xs font-medium md:gap-5 lg:text-base">
