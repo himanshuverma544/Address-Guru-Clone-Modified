@@ -5,4 +5,4 @@
 
 # Given By
 
-- DSOM
+- DSOM - Dehradun School of Online Marketing
