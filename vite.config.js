@@ -7,7 +7,7 @@ import eslint from 'vite-plugin-eslint';
 
 export default defineConfig({
 
-  base: "/DSOM-Assignment/",
+  base: "/Address-Guru-Clone-Modified/",
 
   plugins: [
     react(),
